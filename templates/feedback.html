@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Submit Feedback | Student Feedback{% endblock %}{% block content %}
+<section class="page-heading"><p class="eyebrow">STUDENT FORM</p><h1>Share your feedback</h1><p>Complete all fields below. Your feedback will appear on the dashboard.</p></section>
+<form class="form-card" method="post"><label for="student_name">Student name</label><input id="student_name" name="student_name" maxlength="100" required placeholder="Enter your name">
+<div class="form-grid"><div><label for="subject">Subject</label><select id="subject" name="subject" required><option value="">Select a subject</option><option>DevOps</option><option>Machine Learning</option><option>Computer Networks</option><option>Database Management</option><option>Other</option></select></div>
+<div><label for="faculty">Faculty name</label><input id="faculty" name="faculty" maxlength="100" required placeholder="Enter faculty name"></div></div>
+<label for="rating">Overall rating</label><select id="rating" name="rating" required><option value="">Choose a rating</option><option value="5">5 - Excellent</option><option value="4">4 - Very good</option><option value="3">3 - Good</option><option value="2">2 - Needs improvement</option><option value="1">1 - Poor</option></select>
+<label for="comments">Comments</label><textarea id="comments" name="comments" rows="5" maxlength="1000" required placeholder="What went well? What could be improved?"></textarea>
+<button class="button" type="submit">Submit Feedback</button></form>{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Home | Student Feedback{% endblock %}{% block content %}
+<section class="hero"><div><p class="eyebrow">YOUR VOICE MATTERS</p><h1>Better learning starts with honest feedback.</h1>
+<p>Share your learning experience and help improve teaching, subjects, and the classroom environment.</p>
+<div class="actions"><a class="button" href="{{ url_for('feedback') }}">Give Feedback</a><a class="button secondary" href="{{ url_for('dashboard') }}">View Dashboard</a></div></div>
+<div class="hero-art">💬<span>⭐</span></div></section>
+<section class="features"><article class="feature"><div class="feature-icon">✍️</div><h2>Simple form</h2><p>Submit a rating and comments in a few steps.</p></article>
+<article class="feature"><div class="feature-icon">📊</div><h2>Clear summary</h2><p>View feedback and average ratings.</p></article>
+<article class="feature"><div class="feature-icon">🤝</div><h2>Improve together</h2><p>Student opinions can support better learning.</p></article></section>{% endblock %}

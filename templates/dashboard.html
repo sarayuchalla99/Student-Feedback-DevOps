@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Dashboard | Student Feedback{% endblock %}{% block content %}
+<section class="page-heading"><p class="eyebrow">FEEDBACK OVERVIEW</p><h1>Feedback dashboard</h1><p>Review ratings and comments submitted by students.</p></section>
+<section class="stats"><article class="stat-card"><span>Total responses</span><strong>{{ summary.total }}</strong></article><article class="stat-card"><span>Average rating</span><strong>{% if summary.average is not none %}{{ summary.average }} / 5{% else %}—{% endif %}</strong></article></section>
+<section class="table-card"><div class="table-title"><h2>Recent feedback</h2><a href="{{ url_for('feedback') }}">+ Add feedback</a></div>
+{% if entries %}<div class="table-wrap"><table><thead><tr><th>Student</th><th>Subject</th><th>Faculty</th><th>Rating</th><th>Comments</th><th>Date</th></tr></thead><tbody>
+{% for entry in entries %}<tr><td>{{ entry.student_name }}</td><td>{{ entry.subject }}</td><td>{{ entry.faculty }}</td><td><span class="rating">★ {{ entry.rating }}/5</span></td><td>{{ entry.comments }}</td><td>{{ entry.created_at }}</td></tr>{% endfor %}
+</tbody></table></div>{% else %}<div class="empty"><div>📝</div><h3>No feedback yet</h3><p>Be the first to share your experience.</p><a class="button" href="{{ url_for('feedback') }}">Submit feedback</a></div>{% endif %}</section>{% endblock %}
